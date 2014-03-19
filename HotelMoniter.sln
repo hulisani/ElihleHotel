@@ -13,6 +13,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hotel.Monitor.BLL", "Hotel.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HotelMonitor.Test", "HotelMonitor.Test\HotelMonitor.Test.csproj", "{B82EA0DE-C50A-422E-A603-577337DA8E85}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ThirdParty", "ThirdParty", "{BDD94472-BD8D-4010-A629-2331DBB9A580}"
+	ProjectSection(SolutionItems) = preProject
+		ThirdParty\EntityFramework.SqlServer.dll = ThirdParty\EntityFramework.SqlServer.dll
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
