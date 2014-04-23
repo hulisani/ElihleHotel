@@ -54,6 +54,8 @@
     <Compile Include="HotelRoomRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RepositoryUnitOfWork.cs" />
+    <Compile Include="RoomPriceRepository.cs" />
+    <Compile Include="RoomTypeRepository.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Hotel.Monitor.DAL.EF\Hotel.Monitor.DAL.EF.csproj">

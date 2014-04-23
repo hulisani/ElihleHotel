@@ -49,6 +49,23 @@
   <ItemGroup>
     <Compile Include="Class1.cs" />
     <Compile Include="HotelMonitorContext.cs" />
+    <Compile Include="Migrations\201404230646047_InitialCreate.cs" />
+    <Compile Include="Migrations\201404230646047_InitialCreate.Designer.cs">
+      <DependentUpon>201404230646047_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201404230901003_new.cs" />
+    <Compile Include="Migrations\201404230901003_new.Designer.cs">
+      <DependentUpon>201404230901003_new.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201404230930385_addForeignKey.cs" />
+    <Compile Include="Migrations\201404230930385_addForeignKey.Designer.cs">
+      <DependentUpon>201404230930385_addForeignKey.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201404230943518_undoaddForeignKey.cs" />
+    <Compile Include="Migrations\201404230943518_undoaddForeignKey.Designer.cs">
+      <DependentUpon>201404230943518_undoaddForeignKey.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -60,6 +77,20 @@
       <Project>{239AF841-D4F9-498B-BFD9-2250BF9CCEF3}</Project>
       <Name>Hotel.Monitor.Entities</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201404230646047_InitialCreate.resx">
+      <DependentUpon>201404230646047_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201404230901003_new.resx">
+      <DependentUpon>201404230901003_new.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201404230930385_addForeignKey.resx">
+      <DependentUpon>201404230930385_addForeignKey.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201404230943518_undoaddForeignKey.resx">
+      <DependentUpon>201404230943518_undoaddForeignKey.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

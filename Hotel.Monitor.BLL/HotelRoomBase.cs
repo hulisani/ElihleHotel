@@ -27,5 +27,12 @@ namespace Hotel.Monitor.BLL
         }
 
 
+        public ICollection<HotelRoom> GetAvailableRooms()
+        {
+            return roomRep.All().Where(r => r.ActiveBooking == null).ToList();
+        }
+
+
+     
     }
 }

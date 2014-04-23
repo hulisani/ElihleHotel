@@ -6,7 +6,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Hotel.Monitor.Entities
 {
-    public class Hotel
+    public class Hotel : Notifier
     {
         [Key]
         public int Id { get; set; }

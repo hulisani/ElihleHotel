@@ -18,6 +18,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ThirdParty", "ThirdParty", 
 		ThirdParty\EntityFramework.SqlServer.dll = ThirdParty\EntityFramework.SqlServer.dll
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AccommodationBooker", "AccommodationBooker\AccommodationBooker.csproj", "{95EAB028-F5EE-4887-AA2B-7D5D5C7D1CD1}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -88,6 +90,16 @@ Global
 		{B82EA0DE-C50A-422E-A603-577337DA8E85}.Release|Mixed Platforms.Build.0 = Release|x86
 		{B82EA0DE-C50A-422E-A603-577337DA8E85}.Release|x86.ActiveCfg = Release|x86
 		{B82EA0DE-C50A-422E-A603-577337DA8E85}.Release|x86.Build.0 = Release|x86
+		{95EAB028-F5EE-4887-AA2B-7D5D5C7D1CD1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{95EAB028-F5EE-4887-AA2B-7D5D5C7D1CD1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{95EAB028-F5EE-4887-AA2B-7D5D5C7D1CD1}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{95EAB028-F5EE-4887-AA2B-7D5D5C7D1CD1}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{95EAB028-F5EE-4887-AA2B-7D5D5C7D1CD1}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{95EAB028-F5EE-4887-AA2B-7D5D5C7D1CD1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{95EAB028-F5EE-4887-AA2B-7D5D5C7D1CD1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{95EAB028-F5EE-4887-AA2B-7D5D5C7D1CD1}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{95EAB028-F5EE-4887-AA2B-7D5D5C7D1CD1}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{95EAB028-F5EE-4887-AA2B-7D5D5C7D1CD1}.Release|x86.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -1,0 +1,26 @@
+﻿<Window x:Class="AccommodationBooker.Views.LoginWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Please log in" Height="200" Width="315" Closing="Window_Closing">
+    <Grid Visibility="Visible" RenderTransformOrigin="0.657,0.507" >
+        <Grid.RowDefinitions>
+            <RowDefinition Height="65" />
+            <RowDefinition Height="25" />
+            <RowDefinition Height="25" />
+            <RowDefinition Height="25" />
+            <RowDefinition Height="25" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="auto"  />
+            <ColumnDefinition Width="auto" MinWidth="150" />
+        </Grid.ColumnDefinitions>
+        <Image Source="..\images\HotelMonitorSmalllogo.jpg" Grid.Row="0" Width="300" Grid.ColumnSpan="2" Height="65" />
+        
+        <TextBlock Text="Username" Grid.Row="1" Margin="2" FontWeight="Bold" />
+        <TextBox Grid.Row="1" Text="{Binding UserName, Mode=TwoWay}" Grid.Column="1" Margin="2" />
+        <TextBlock Text="Password" Grid.Row="2" Margin="2" FontWeight="Bold" />
+        <TextBox Grid.Row="2" Text="{Binding Password, Mode=TwoWay}" Grid.Column="1" Margin="2" />
+        <Button Command="{Binding LoginCommand}" Grid.Row="3" Grid.Column="1" HorizontalAlignment="Right" Width="50" Content="Log in" Margin="2" />
+        <TextBlock Text="{Binding LoginFailureMessage}" Foreground="Red" Grid.Row="4" Grid.ColumnSpan="2" />
+    </Grid>
+</Window>

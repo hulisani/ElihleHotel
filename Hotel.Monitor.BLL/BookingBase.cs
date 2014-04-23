@@ -9,21 +9,26 @@ namespace Hotel.Monitor.BLL
 {
     public class BookingBase
     {
-        Repository.IRepository<Booking> bookingRep;
+        Repository.IRepository<Reservation> bookingRep;
         public BookingBase()
         {
-            bookingRep = RepositoryUnitOfWork.Instance.GetRepository<Booking>();
+            bookingRep = RepositoryUnitOfWork.Instance.GetRepository<Reservation>();
         }
 
-        public void CreateBooking(Booking booking)
+        public void CreateBooking(Reservation booking)
         { 
             bookingRep.Create(booking);
         }
 
-        public ICollection<Booking> GetBookingByDates(DateTime fromDate, DateTime toDate)
+        public ICollection<Reservation> GetBookingByDates(DateTime fromDate, DateTime toDate)
         {
            var booking = bookingRep.All().Where(b => b.FromDate >= fromDate && b.ToDate <= toDate);
            return booking.ToList();
+        }
+
+        public ICollection<Reservation> GetAllBooks()
+        {
+            return bookingRep.All().ToList();
         }
     }
 }

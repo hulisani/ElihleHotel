@@ -8,7 +8,7 @@ using Hotel.Monitor.DAL.EF;
 
 namespace Hotel.Monitor.Repositories
 {
-    public class ClientRepository : Repository<Client>
+    public class ClientRepository : Repository<Customer>
     {
         public ClientRepository(HotelMonitorContext context)
             : base(context)
