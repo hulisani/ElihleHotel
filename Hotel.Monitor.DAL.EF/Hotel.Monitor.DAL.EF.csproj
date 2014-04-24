@@ -65,6 +65,10 @@
     <Compile Include="Migrations\201404230943518_undoaddForeignKey.Designer.cs">
       <DependentUpon>201404230943518_undoaddForeignKey.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201404242032455_breakfastColumn.cs" />
+    <Compile Include="Migrations\201404242032455_breakfastColumn.Designer.cs">
+      <DependentUpon>201404242032455_breakfastColumn.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -90,6 +94,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201404230943518_undoaddForeignKey.resx">
       <DependentUpon>201404230943518_undoaddForeignKey.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201404242032455_breakfastColumn.resx">
+      <DependentUpon>201404242032455_breakfastColumn.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

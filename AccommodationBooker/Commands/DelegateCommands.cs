@@ -15,6 +15,7 @@ namespace AccommodationBooker.Commands
         }
 
         private Action _executeMethod;
+       
 
         public bool CanExecute(object parameter)
         {

@@ -10,9 +10,20 @@ namespace Hotel.Monitor.Entities
     public class RoomPrice : Notifier
     {
 
-
+        private int id;
         [Key]
-        public int Id { get; set; }
+        public int Id
+        {
+            get
+            {
+                return id;
+            }
+            set
+            {
+                id = value;
+                RaisePropertyChanged("Id");
+            }
+        }
 
         private RoomType rType;
 
@@ -34,7 +45,7 @@ namespace Hotel.Monitor.Entities
             }
         }
 
-        private DateTime dtFrom;
+        private DateTime dtFrom = DateTime.Today;
 
         public DateTime FromDate
         {
@@ -50,7 +61,7 @@ namespace Hotel.Monitor.Entities
         }
 
 
-        private DateTime dtTo;
+        private DateTime dtTo = DateTime.Today;
 
         public DateTime ToDate
         {

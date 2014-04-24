@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Hotel.Monitor.BLL;
+using System.Windows.Input;
+using AccommodationBooker.Commands;
 
 namespace AccommodationBooker.ViewModels
 {
@@ -49,6 +51,8 @@ namespace AccommodationBooker.ViewModels
             //};
 
             this.NewReservation = new Hotel.Monitor.Entities.Reservation();
+            NewReservation.FromDate = DateTime.Today;
+            NewReservation.ToDate = DateTime.Today;
         }
 
         private int numRoomsAvailable;
@@ -287,17 +291,49 @@ namespace AccommodationBooker.ViewModels
         }
 
 
+        private List<Hotel.Monitor.Entities.HotelRoom> selectedRooms = new List<Hotel.Monitor.Entities.HotelRoom>();
+
+        
+
+
         internal void GetReservedRoom()
         {
-            
-            //NewReservation.RoomsReserved = null;
-            //NewReservation.RoomsReserved = RoomReservations.Where(x => x.ActiveBooking != null).ToList();
+            if(NewReservation.Rooms == null)
+                NewReservation.Rooms = new List<Hotel.Monitor.Entities.HotelRoom>();
 
-            //if (NewReservation.RoomsReserved != null)
-            //{
-            //    NewReservation.CalculateTotalAmount();
-            //}
-                     
+            if (SelectedRoom != null)
+                NewReservation.Rooms.Add(SelectedRoom);
+
+            if (NewReservation.Rooms.Count > 0)
+            {
+                NewReservation.CalculateTotalAmount();
+            }
+
         }
+
+
+        #region Commands
+
+        public ICommand cmdSaveReservation
+        {
+            get { return new DelegateCommand(SaveReservation); }
+        }
+
+        private void SaveReservation()
+        {
+            BookingBase bookingBase = new BookingBase();
+            bookingBase.CreateBooking(NewReservation);
+            //this is called when the button is clicked
+        }
+
+        private bool FuncToEvaluate(object context)
+        {
+            //this is called to evaluate whether FuncToCall can be called
+            //for example you can return true or false based on some validation logic
+            return true;
+        }
+        #endregion
+
+
     }
 }

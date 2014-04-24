@@ -46,6 +46,8 @@ namespace AccommodationBooker.ViewModels
             }
         }
 
+         
+
         private string userName;
         public string UserName
         {

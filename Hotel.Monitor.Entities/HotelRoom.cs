@@ -85,6 +85,7 @@ namespace Hotel.Monitor.Entities
             }
         }
 
+        
         private Reservation activeBooking;
         public virtual Reservation ActiveBooking
         {

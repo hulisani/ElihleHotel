@@ -42,10 +42,10 @@
                                     <TextBlock Text="Select stay dates" Foreground="White" HorizontalAlignment="Center" />
                                 </StackPanel>
                                 <TextBlock Text="Check In" Grid.Column="0" Grid.Row="1" FontWeight="Bold" Margin="2" />
-                                <DatePicker Grid.Column="1" Grid.Row="1" Margin="2" SelectedDate="{Binding NewReservation.CheckinDate}" BorderBrush="DarkGray" />
+                                <DatePicker Grid.Column="1" Grid.Row="1" Margin="2" SelectedDate="{Binding NewReservation.FromDate, Mode=TwoWay}" BorderBrush="DarkGray" />
 
                                 <TextBlock Text="Check-Out" Grid.Column="0" Grid.Row="2" FontWeight="Bold" />
-                                <DatePicker Grid.Column="1" Grid.Row="2" Margin="2" SelectedDate="{Binding NewReservation.CheckOutDate}" BorderBrush="DarkGray" />
+                                <DatePicker Grid.Column="1" Grid.Row="2" Margin="2" SelectedDate="{Binding NewReservation.ToDate, Mode=TwoWay}" BorderBrush="DarkGray" />
 
                                 <TextBlock Text="Number of persons" Grid.Column="0" Grid.Row="3" Grid.ColumnSpan="1" FontWeight="Bold" />
                                 <ComboBox Grid.Column="1" Grid.Row="3" Margin="2" ItemsSource="{Binding NumberOfPersonsList}" Width="35" HorizontalAlignment="Right" SelectedValue="{Binding NewReservation.NumberOfPersons}">
@@ -103,7 +103,7 @@
                                     <TextBlock Text="{Binding NumRoomsAvailable}" />
                                 </StackPanel>
 
-                                <ListBox Grid.Row="2" ItemsSource="{Binding RoomReservations}" SelectedItem="{Binding SelectedRoom}" MaxHeight="260" ScrollViewer.HorizontalScrollBarVisibility="Hidden" >
+                                <ListBox Grid.Row="2" ItemsSource="{Binding RoomReservations}" SelectedItem="{Binding SelectedRoom, Mode=TwoWay}" MaxHeight="260" ScrollViewer.HorizontalScrollBarVisibility="Hidden" >
                                     <ListBox.ItemTemplate>
                                         <DataTemplate>
                                             <Grid Width="480">
@@ -289,9 +289,9 @@
                             </Grid>
                         </Border>
 
-                        <Button Width="102" Height="93" Margin="10" BorderThickness="0" BorderBrush="White">
+                        <Button Width="102" Height="93" Margin="10" BorderThickness="0" BorderBrush="White" Command="{Binding Path=cmdSaveReservation}">
                             <StackPanel >
-                                <Image Source="Images/BookButton.jpg"  Width="102" Height="93"   />
+                                <Image Source="Images/BookButton.jpg"  Width="102" Height="93"    />
                             </StackPanel>
                         </Button>
 
