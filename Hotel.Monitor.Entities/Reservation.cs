@@ -7,7 +7,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Hotel.Monitor.Entities
 {
-    public class Reservation : Notifier
+    public class Reservation : Notifier,IEquatable<Reservation>
     {
 
         private int id;
@@ -81,6 +81,21 @@ namespace Hotel.Monitor.Entities
             }
         }
 
+        private bool checkedIn;
+
+        public bool CheckedIn
+        {
+            get
+            {
+                return checkedIn;
+            }
+            set
+            {
+                checkedIn = value;
+                RaisePropertyChanged("CheckedIn");
+            }
+        }
+
         private bool parking;
         public bool Parking 
         {
@@ -96,7 +111,8 @@ namespace Hotel.Monitor.Entities
         }
 
         private ICollection<HotelRoom> rooms;
-        public virtual ICollection<HotelRoom> Rooms
+         
+        public virtual  ICollection<HotelRoom> Rooms
         {
             get
             {
@@ -177,6 +193,21 @@ namespace Hotel.Monitor.Entities
          
         }
 
+        private ICollection<ReservationPayment> reservationPayments;
+
+        public virtual ICollection<ReservationPayment> ReservationPayments
+        {
+            get
+            {
+                return reservationPayments;
+            }
+            set
+            {
+                reservationPayments = value;
+                RaisePropertyChanged("ReservationPayments");
+            }
+        }
+
         public void CalculateTotalAmount()
         {
             decimal total = 0;
@@ -186,6 +217,11 @@ namespace Hotel.Monitor.Entities
             }
 
             this.TotalCost = (total * NumberOfNights);
+        }
+
+        public bool Equals(Reservation other)
+        {
+            return this.Id == other.Id;
         }
     }
 }

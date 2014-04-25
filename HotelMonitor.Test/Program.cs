@@ -15,8 +15,11 @@ namespace HotelMonitor.Test
 
             HotelRoomBase hrb = new HotelRoomBase();
             var rooms = hrb.GetRooms();
+            var availableRooms = hrb.GetAvailableRooms(DateTime.Today.AddDays(1), DateTime.Today.AddDays(51));
 
-            Parallel.ForEach(rooms, room => Console.WriteLine("Found Room : " + room.Name));
+            Parallel.ForEach(rooms, room =>                 
+                Console.WriteLine("Found Room : " + room.Name + "..." + "Available: " + availableRooms.Contains(room))                
+                );
 
             Console.ReadLine();
             //RoomType rt = new RoomType();

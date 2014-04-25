@@ -69,6 +69,34 @@
     <Compile Include="Migrations\201404242032455_breakfastColumn.Designer.cs">
       <DependentUpon>201404242032455_breakfastColumn.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201404250818509_AddedPaymentClass.cs" />
+    <Compile Include="Migrations\201404250818509_AddedPaymentClass.Designer.cs">
+      <DependentUpon>201404250818509_AddedPaymentClass.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201404250823339_AddedPaymentClass2.cs" />
+    <Compile Include="Migrations\201404250823339_AddedPaymentClass2.Designer.cs">
+      <DependentUpon>201404250823339_AddedPaymentClass2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201404251002307_AddedPaymentClass21.cs" />
+    <Compile Include="Migrations\201404251002307_AddedPaymentClass21.Designer.cs">
+      <DependentUpon>201404251002307_AddedPaymentClass21.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201404251005367_AddedPaymentClass22.cs" />
+    <Compile Include="Migrations\201404251005367_AddedPaymentClass22.Designer.cs">
+      <DependentUpon>201404251005367_AddedPaymentClass22.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201404251006484_AddedPaymentClass23.cs" />
+    <Compile Include="Migrations\201404251006484_AddedPaymentClass23.Designer.cs">
+      <DependentUpon>201404251006484_AddedPaymentClass23.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201404251009139_removeMaby2Many.cs" />
+    <Compile Include="Migrations\201404251009139_removeMaby2Many.Designer.cs">
+      <DependentUpon>201404251009139_removeMaby2Many.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201404251021011_rel.cs" />
+    <Compile Include="Migrations\201404251021011_rel.Designer.cs">
+      <DependentUpon>201404251021011_rel.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -97,6 +125,27 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201404242032455_breakfastColumn.resx">
       <DependentUpon>201404242032455_breakfastColumn.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201404250818509_AddedPaymentClass.resx">
+      <DependentUpon>201404250818509_AddedPaymentClass.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201404250823339_AddedPaymentClass2.resx">
+      <DependentUpon>201404250823339_AddedPaymentClass2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201404251002307_AddedPaymentClass21.resx">
+      <DependentUpon>201404251002307_AddedPaymentClass21.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201404251005367_AddedPaymentClass22.resx">
+      <DependentUpon>201404251005367_AddedPaymentClass22.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201404251006484_AddedPaymentClass23.resx">
+      <DependentUpon>201404251006484_AddedPaymentClass23.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201404251009139_removeMaby2Many.resx">
+      <DependentUpon>201404251009139_removeMaby2Many.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201404251021011_rel.resx">
+      <DependentUpon>201404251021011_rel.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

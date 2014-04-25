@@ -326,6 +326,21 @@ namespace AccommodationBooker.ViewModels
             //this is called when the button is clicked
         }
 
+
+
+        public ICommand cmdCheckAvailability
+        {
+            get { return new DelegateCommand(CheckAvailability); }
+        }
+
+
+        private void CheckAvailability()
+        {
+            HotelRoomBase hrb = new HotelRoomBase();
+            FullReservationList = hrb.GetAvailableRooms(NewReservation.FromDate, NewReservation.ToDate);
+            RoomReservations = FullReservationList;
+            NumRoomsAvailable = FullReservationList.Count;
+        }
         private bool FuncToEvaluate(object context)
         {
             //this is called to evaluate whether FuncToCall can be called

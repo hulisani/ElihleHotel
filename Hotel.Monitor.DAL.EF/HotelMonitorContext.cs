@@ -16,5 +16,20 @@ namespace Hotel.Monitor.DAL.EF
         public DbSet<Customer> Customers { get; set; }
         public DbSet<RoomPrice> RoomPrices { get; set; }
         public DbSet<RoomType> RoomTypes { get; set; }
+        public DbSet<ReservationPayment> ReservationPayments { get; set; }
+
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<Reservation>().
+              HasMany(r => r.Rooms).
+              WithMany(room => room.Reservations).
+              Map(
+               m =>
+               {
+                   m.MapLeftKey("ReservationId");
+                   m.MapRightKey("RoomId");
+                   m.ToTable("ReservedRoom");
+               });
+        }
     }
 }

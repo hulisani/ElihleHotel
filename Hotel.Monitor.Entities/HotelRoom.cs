@@ -7,7 +7,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Hotel.Monitor.Entities
 {
-    public class HotelRoom : Notifier
+    public class HotelRoom : Notifier, IEquatable<HotelRoom>
     {
 
         private int id;
@@ -86,19 +86,19 @@ namespace Hotel.Monitor.Entities
         }
 
         
-        private Reservation activeBooking;
-        public virtual Reservation ActiveBooking
-        {
-            get
-            {
-                return activeBooking;
-            }
-            set
-            {
-                activeBooking = value;
-                RaisePropertyChanged("ActiveBooking");
-            }
-        }
+        //private Reservation activeBooking;
+        //public virtual Reservation ActiveBooking
+        //{
+        //    get
+        //    {
+        //        return activeBooking;
+        //    }
+        //    set
+        //    {
+        //        activeBooking = value;
+        //        RaisePropertyChanged("ActiveBooking");
+        //    }
+        //}
 
         private int maxPeopleInRoom;
         public int MaxPeople
@@ -113,13 +113,33 @@ namespace Hotel.Monitor.Entities
                 RaisePropertyChanged("MaxPeople");
             }
         }
+
+
+        private ICollection<Reservation> reservations;
         
-        public bool IsBooked
+        public virtual  ICollection<Reservation> Reservations
         {
             get
             {
-                return ActiveBooking == null;
+                return reservations;
             }
+            set
+            {
+                reservations = value;
+                RaisePropertyChanged("Reservations");
+            }
+        }
+        //public bool IsBooked
+        //{
+        //    get
+        //    {
+        //        return ActiveBooking == null;
+        //    }
+        //}
+
+        public bool Equals(HotelRoom other)
+        {
+            return this.id == other.id;
         }
     }
 }

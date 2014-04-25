@@ -52,7 +52,7 @@
                                  
                                 </ComboBox>
 
-                                <Button Width="auto" Content="Check Availability" Margin="2" BorderBrush="DarkGray" Foreground="Navy" Grid.Column="1" Grid.Row="4" Background="White" />
+                                <Button Width="auto" Content="Check Availability" Margin="2" BorderBrush="DarkGray" Foreground="Navy" Grid.Column="1" Grid.Row="4" Background="White" Command="{Binding Path=cmdCheckAvailability}" />
                             </Grid>
 
                         </Border>

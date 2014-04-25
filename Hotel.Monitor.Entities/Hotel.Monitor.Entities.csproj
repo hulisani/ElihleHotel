@@ -54,6 +54,7 @@
     <Compile Include="HotelRoom.cs" />
     <Compile Include="Notifier.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ReservationPayment.cs" />
     <Compile Include="RoomPrice.cs" />
     <Compile Include="RoomType.cs" />
   </ItemGroup>

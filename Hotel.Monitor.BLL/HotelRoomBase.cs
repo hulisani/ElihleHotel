@@ -27,12 +27,24 @@ namespace Hotel.Monitor.BLL
         }
 
 
-        public ICollection<HotelRoom> GetAvailableRooms()
+        public ICollection<HotelRoom> GetAvailableRooms(DateTime fromDate,DateTime toDate)
         {
-            return roomRep.All().Where(r => r.ActiveBooking == null).ToList();
+            BookingBase bookingBase = new BookingBase();
+            var bookings = bookingBase.GetBookingByDates(fromDate, toDate);
+            List<HotelRoom> bookedRooms = bookings.SelectMany(b => b.Rooms).ToList();
+
+            List<HotelRoom> toReturn = new List<HotelRoom>();
+            foreach (HotelRoom ro in roomRep.All())
+            {
+                if (!bookedRooms.Contains(ro))
+                    toReturn.Add(ro);
+            }
+
+            return toReturn;
+           // return roomRep.All().Where(r=>!bookedRooms.Contains(r)).ToList();
         }
 
 
-     
+        
     }
 }

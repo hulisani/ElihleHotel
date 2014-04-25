@@ -22,13 +22,20 @@ namespace Hotel.Monitor.BLL
 
         public ICollection<Reservation> GetBookingByDates(DateTime fromDate, DateTime toDate)
         {
-           var booking = bookingRep.All().Where(b => b.FromDate >= fromDate && b.ToDate <= toDate);
+           var booking = bookingRep.All().Where(
+                                                b => (b.FromDate >= fromDate && b.FromDate <= toDate) ||
+                                                ( b.ToDate >=fromDate && b.ToDate <= toDate)
+                                                 );
            return booking.ToList();
         }
 
-        public ICollection<Reservation> GetAllBooks()
+        public ICollection<Reservation> GetAllBookings()
         {
             return bookingRep.All().ToList();
         }
+
+        
+
+       // public ICollection<Reservation> GetBooking 
     }
 }
