@@ -322,6 +322,7 @@ namespace AccommodationBooker.ViewModels
         private void SaveReservation()
         {
             BookingBase bookingBase = new BookingBase();
+            NewReservation.Client = NewCustomer;
             bookingBase.CreateBooking(NewReservation);
             //this is called when the button is clicked
         }
