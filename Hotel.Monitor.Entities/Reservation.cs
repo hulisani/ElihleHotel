@@ -125,6 +125,23 @@ namespace Hotel.Monitor.Entities
             }
         }
 
+        [NotMapped]
+        public string RoomsSummary
+        {
+            get
+            {
+                string roomStr = string.Empty;
+                if (Rooms != null)
+                {
+                    foreach (var room in Rooms)
+                    {
+                        roomStr += room.Name + "  " ;
+                    }
+                }
+
+                return roomStr;
+            }
+        }
 
         private Employee bookingEmployee;
 
