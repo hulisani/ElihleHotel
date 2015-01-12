@@ -7,6 +7,8 @@ using System.Text;
 using System.Threading.Tasks;
 using Hotel.Monitor.BLL;
 using Hotel.Monitor.Entities;
+using System.Windows.Input;
+using AccommodationBooker.Commands;
 
 namespace AccommodationBooker.ViewModels
 {
@@ -16,13 +18,17 @@ namespace AccommodationBooker.ViewModels
         {
             FromDate = DateTime.Today;
             ToDate = DateTime.Today.AddDays(365);
-            BookingBase bb = new BookingBase();
-            FullReservationList = bb.GetAllBookings();
+            FilterResults();
 
         }
 
 
+        private void FilterResults()
+        {
+            BookingBase bb = new BookingBase();
+            FullReservationList = bb.GetAllBookings().Where((b => b.FromDate >= FromDate && b.ToDate <= ToDate)).ToList();                         
 
+        }
 
         private DateTime fromDate;
 
@@ -102,6 +108,31 @@ namespace AccommodationBooker.ViewModels
             }
         }
 
+
+        public ICommand cmdOpenReservation
+        {
+            get { return new DelegateCommand(OpenReservation); }
+
+        }
+
+        public void OpenReservation()
+        {
+            AccommodationBooker.Views.Booking booking = new Views.Booking(SelectedReservation);
+            booking.ShowDialog();
+        }
+
+
+        public ICommand cmdSearch
+        {
+            get { return new DelegateCommand(SearchBookings); }
+        }
+
+
+        private void SearchBookings()
+        {
+            FilterResults();
+        }
+        
         public event PropertyChangedEventHandler PropertyChanged;
 
         private void RaisePropertyChanged(string propertyName)
@@ -113,5 +144,8 @@ namespace AccommodationBooker.ViewModels
                 handler(this, new PropertyChangedEventArgs(propertyName));
             }
         }
+
+
+
     }
 }

@@ -47,6 +47,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Expense.cs" />
+    <Compile Include="ExtentionMethods.cs" />
+    <Compile Include="InventoryItem.cs" />
     <Compile Include="Reservation.cs" />
     <Compile Include="Customer.cs" />
     <Compile Include="Employee.cs" />

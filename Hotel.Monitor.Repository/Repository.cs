@@ -41,7 +41,9 @@ namespace Hotel.Monitor.Repository
 
         public bool Update(T t)
         {
-            throw new NotImplementedException();
+            //var newEntry = DbSet.Add(t);
+            context.SaveChanges();
+            return true;
         }
 
         public T Create(T t)

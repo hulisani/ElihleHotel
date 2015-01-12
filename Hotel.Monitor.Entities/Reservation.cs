@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Threading.Tasks;
 
 namespace Hotel.Monitor.Entities
 {
@@ -96,6 +97,21 @@ namespace Hotel.Monitor.Entities
             }
         }
 
+
+        private bool checkedOut;
+
+        public bool CheckedOut
+        {
+            get
+            {
+                return checkedOut;
+            }
+            set
+            {
+                checkedOut = value;
+                RaisePropertyChanged("CheckedOut");
+            }
+        }
         private bool parking;
         public bool Parking 
         {
@@ -185,6 +201,19 @@ namespace Hotel.Monitor.Entities
             }
         }
 
+        [NotMapped]
+        public decimal OutstandingAmount
+        {
+            get
+            {
+              decimal paidMount = 0;
+              foreach(ReservationPayment payment in ReservationPayments)
+              {
+                   paidMount = payment.PaymentAmount + paidMount;
+              }
+               return TotalCost - paidMount;
+            }
+        }
 
         private decimal totalCost;
         [NotMapped]
@@ -195,11 +224,12 @@ namespace Hotel.Monitor.Entities
                 decimal total = 0;
                 if (Rooms != null)
                 {
+
                     foreach (HotelRoom room in Rooms)
                         total += room.Price;
 
                 }
-                totalCost = total * NumberOfPersons;
+                totalCost = total * NumberOfNights;
                 return totalCost;
             }
             set

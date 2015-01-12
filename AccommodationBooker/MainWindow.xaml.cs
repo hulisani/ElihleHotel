@@ -49,6 +49,8 @@ namespace AccommodationBooker
         {
             InventoryManagementFrame.Content = new InventoryManagement();
             BookingManagementFrame.Content = new BookingManagement();
+            IncomeExpenseFrame.Content = new IncomeExpense();
+            AdminFrame.Content = new Admin();
         }
 
         private void CheckBox_Checked(object sender, RoutedEventArgs e)

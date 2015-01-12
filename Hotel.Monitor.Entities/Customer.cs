@@ -24,6 +24,22 @@ namespace Hotel.Monitor.Entities
             }
         }
 
+
+
+        //private string idnumber;
+        //public string IDNumber
+        //{
+        //    get { return idnumber; }
+        //    set
+        //    {
+        //        if (idnumber != value)
+        //        {
+        //            idnumber = value;
+        //            RaisePropertyChanged("IDNumber");
+        //        }
+        //    }
+        //}
+
         private string firstName;
         public string FirstName
         {

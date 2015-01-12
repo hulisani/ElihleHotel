@@ -20,6 +20,11 @@ namespace Hotel.Monitor.BLL
             bookingRep.Create(booking);
         }
 
+        public void UpdateBooking(Reservation booking)
+        {
+            bookingRep.Update(booking);
+        }
+
         public ICollection<Reservation> GetBookingByDates(DateTime fromDate, DateTime toDate)
         {
            var booking = bookingRep.All().Where(
